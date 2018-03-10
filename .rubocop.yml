@@ -1,0 +1,11 @@
+AllCops:
+  TargetRubyVersion: 2.4
+
+Style/MixinUsage:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/ParameterLists:
+  Enabled: false

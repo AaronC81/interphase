@@ -20,6 +20,18 @@ window.show_all
 window.run
 ```
 
+## Quick start
+First, install the Interphase gem:
+
+```
+gem install interphase
+```
+
+In the future, Interphase will have tutorials, but for now, check out the
+[documentation](http://www.rubydoc.info/github/OrangeFlash81/Interphase/).
+
+## More info
+
 Interphase is effectively a 'friendly wrapper' for GTK2, so it supports a
 plethora of widgets which look great on any platform.
 

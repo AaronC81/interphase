@@ -12,4 +12,6 @@ Gem::Specification.new do |s|
   s.require_paths = %w[lib]
 
   s.add_runtime_dependency 'gtk2', '~> 3.2', '>= 3.2.0'
+
+  s.add_development_dependency 'rspec', '~> 3.7', '>= 3.7.0'
 end

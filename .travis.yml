@@ -7,4 +7,4 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 # give xvfb some time to start
 notifications:
-  webhook: https://discordapp.com/api/webhooks/422835991871488001/dWTE5QCVmEOgb__ay7L7-DjH5iwzmijOsf9d2C5SsmtYYy0Mfy9cnYjF_HyaqXIRkf7W
+  webhooks: https://discordapp.com/api/webhooks/422835991871488001/dWTE5QCVmEOgb__ay7L7-DjH5iwzmijOsf9d2C5SsmtYYy0Mfy9cnYjF_HyaqXIRkf7W

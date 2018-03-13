@@ -1,5 +1,8 @@
 # Interphase - a powerful, easy-to-use, native-looking GUI library for Ruby
 [![Build Status](https://travis-ci.org/OrangeFlash81/Interphase.svg?branch=master)](https://travis-ci.org/OrangeFlash81/Interphase)
+
+<img alt="Logo" src="img/logo.png" style="width: 100px;" />
+
 ## What is Interphase?
 Interphase is a **GUI library for Ruby.** It's got plenty of features & great
 cross-platform support, and it's **really easy to use**.

@@ -5,9 +5,6 @@ require 'gtk2'
 module Interphase
   # A simple item container. You should use +VBox+ or +HBox+ rather than this.
   class Box < Container
-    PACK_START = 0
-    PACK_END = 1
-
     # Add a widget to the box, after all others added at the same reference.
     # Accepts a block which is executed on the child.
     # +child+:: The new child widget.
@@ -16,18 +13,18 @@ module Interphase
     #          +true+.
     # +padding+:: (Optional) Any padding to allocate to this widget, default 0.
     # +ref+:: (Optional) The reference at which to add the widget. Either
-    #         +PACK_START+ (default) or +PACK_END+.
+    #         +:start+ (default) or +:end+.
     def add(child,
             expand = true,
             fill = true,
             padding = 0,
-            ref = PACK_START,
+            ref = :start,
             &block)
       super(child, false, &block)
 
-      if ref == PACK_START
+      if ref == :start
         gtk_instance.pack_start(child.gtk_instance, expand, fill, padding)
-      elsif ref == PACK_END
+      elsif ref == :end
         gtk_instance.pack_end(child.gtk_instance, expand, fill, padding)
       else
         raise 'ref should be either PACK_START or PACK_END'

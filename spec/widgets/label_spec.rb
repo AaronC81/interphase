@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-describe Interphase::Entry do
-  let(:subject) { Entry.new }
+describe Interphase::Label do
+  let(:subject) { Label.new }
 
   it_behaves_like 'a text container'
 end

@@ -20,8 +20,8 @@ module Interphase
         @on_change = block
       end
 
-      def responds_to?(name)
-        @object.responds_to?(name)
+      def respond_to?(name)
+        @object.respond_to?(name)
       end
 
       def method_missing(name, *args, &block)

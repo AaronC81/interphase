@@ -24,6 +24,7 @@ GEM
       cairo
       glib2 (= 3.2.1)
     diff-lcs (1.3)
+    docile (1.1.5)
     gdk_pixbuf2 (3.2.1)
       gio2 (= 3.2.1)
     gdk_pixbuf2 (3.2.1-x64-mingw32)
@@ -53,6 +54,7 @@ GEM
       atk (= 3.2.1)
       gdk_pixbuf2 (= 3.2.1)
       pango (= 3.2.1)
+    json (2.1.0)
     native-package-installer (1.0.6)
     pango (3.2.1)
       cairo (>= 1.14.0)
@@ -77,6 +79,11 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.7.0)
     rspec-support (3.7.1)
+    simplecov (0.15.1)
+      docile (~> 1.1.0)
+      json (>= 1.8, < 3)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.2)
 
 PLATFORMS
   ruby
@@ -87,6 +94,7 @@ DEPENDENCIES
   interphase!
   rake (~> 12.0, >= 12.0.0)
   rspec (~> 3.7, >= 3.7.0)
+  simplecov (~> 0.15, >= 0.15.1)
 
 BUNDLED WITH
    1.16.1

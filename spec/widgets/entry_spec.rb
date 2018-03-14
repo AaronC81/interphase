@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 describe Interphase::Entry do
-  let (:subject) { Entry.new }
+  let(:subject) { Entry.new }
 
   context 'text' do
     it 'is editable using #text=' do

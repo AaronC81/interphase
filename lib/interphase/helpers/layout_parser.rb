@@ -62,7 +62,7 @@ module Interphase
           end
         end
 
-        widgets
+        LayoutDescription.new(rows, columns, widgets)
       end
 
       # Creates a +LayoutPlacement+ given a widget's starting position.

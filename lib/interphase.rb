@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'interphase/helpers/observable'
+require 'interphase/helpers/layout_parser'
 
 require 'interphase/widgets/basic_widgets'
 require 'interphase/widgets/window'

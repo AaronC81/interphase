@@ -28,11 +28,30 @@ module Interphase
         @input = input.lines.map(&:strip).reject { |x| x == '' }
       end
 
-      # Parses the LDS into a +LayoutDescription+.
-      def parse
+      # Gets the number of columns which the LDS contains.
+      def columns
+        validate
+
+        input.first.length
+      end
+
+      # Gets the number of rows which the LDS contains.
+      def rows
+        validate
+
+        input.length
+      end
+
+      # Ensures that the LDS used to create the +LayoutParser+ is valid.
+      def validate
         # Checks if all rows are equal
         raise 'Not all rows of equal length' \
           unless input.map(&:length).uniq.length == 1
+      end
+
+      # Parses the LDS into a +LayoutDescription+.
+      def parse
+        validate
 
         widgets = {}
 

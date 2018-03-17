@@ -3,7 +3,7 @@
 require 'interphase'
 include Interphase
 
-window = Window.new 'Grid' do
+window = Window.new('Grid') do
   quit_on_delete!
 
   add Grid.new(2, 2) do

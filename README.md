@@ -81,7 +81,44 @@ window.on_delete do
 end
 ```
 
-## How does it work?
+## Using layouts
+The `Layout` widget is a powerful feature of Interphase which allows complex 
+grid-based layouts to be templated using only a single string. One of these
+strings is called a layout description string, or LDS.
+
+How an LDS works is best demonstrated using an example. Take the following LDS:
+
+```
+aaa
+bbc
+```
+
+This string is two lines by three columns, so it denotes a grid with two rows
+and three columns. The first row contains a three-column-wide widget named `a`.
+The second row contains a two-column-wide widget named `b`, and then a 
+single-column-wide widget named `c`. Each sequence of the same letter is called
+a *slot*.
+
+Once a `Layout` has been created from this LDS, each slot may be assigned a
+widget using hash access syntax.
+
+```ruby
+layout = Layout.new('
+  aaa
+  bbc
+') do
+  self['a'] = Button.new('A')
+  self['b'] = Button.new('B')
+  self['c'] = Button.new('C')
+end
+```
+
+That layout placed into a `Window` looks like this:
+
+![Layout Example](img/layout_example.png)
+
+
+## How does Interphase work?
 Interphase components, formerly 'widgets', derive from the `Widget` class. Each
 instance maintains an instance variable named `@gtk_instance`, which is what
 is *actually* rendered. Most of the methods on `Widget` subclasses actually
@@ -148,7 +185,7 @@ Nothing's perfect!
 - **✓** Labels
 - **✓** Fixed containers
 - **✓** Box containers
-- Grid containers
+- **✓** Grid containers
 - **✓** Buttons
 - Form controls (e.g. dropdowns, input boxes, date pickers)
 - Toolbars and tool button strips

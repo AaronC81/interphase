@@ -88,8 +88,6 @@ module Interphase
           current_row += 1
         end
 
-        puts "#{name} starts at #{start_row}, #{start_col}, width #{width}, height #{height}"
-
         LayoutPlacement.new(
           *position_and_size_to_placement_args(
             start_row,

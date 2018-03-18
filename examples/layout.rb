@@ -7,14 +7,15 @@ window = Window.new('Layout') do
   quit_on_delete!
 
   add Layout.new('
-  aaaaa
-  bcccd
+    =====
+    <###>
+    <###>
+    <###>
   ') do
-    p description
-    self['a'] = Button.new('A!')
-    self['b'] = Button.new('B!')
-    self['c'] = Button.new('C!')
-    self['d'] = Button.new('D!')
+    self['='] = Button.new('Top bar')
+    self['<'] = Button.new('Left sidebar')
+    self['#'] = Button.new('Content')
+    self['>'] = Button.new('Right sidebar')
   end
 end
 

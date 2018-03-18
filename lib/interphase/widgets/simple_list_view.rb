@@ -22,6 +22,8 @@ module Interphase
 
     # Copies #items into #rows, where each item is one row.
     def refresh_items
+      rows.clear
+
       items.each do |item|
         rows << [item]
       end

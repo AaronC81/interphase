@@ -6,16 +6,14 @@ include Interphase
 window = Window.new('List View') do
   quit_on_delete!
 
-  add ListView.new(['Name', 'Age']) do
-    rows << ['Aaron', '17']
-    rows << ['Bob', '18']
+  add ListView.new(%w[Name Age]) do
+    rows << %w[Aaron 17]
+    rows << %w[Bob 18]
 
     on_select do |arg|
       p arg
     end
   end
-
-  
 end
 
 window.show_all

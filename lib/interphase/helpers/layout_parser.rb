@@ -106,9 +106,9 @@ module Interphase
       def position_and_size_to_placement_args(start_row, start_col, width, height)
         [
           start_col,                # left
-          start_col + width - 1,    # right
+          start_col + width,        # right
           start_row,                # top
-          start_row + height - 1    # bottom
+          start_row + height        # bottom
         ]
       end
     end

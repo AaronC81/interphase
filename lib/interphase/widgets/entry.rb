@@ -5,10 +5,12 @@ require 'gtk2'
 module Interphase
   # A box containing text which can be edited by the user.
   class Entry < Widget
+    attr_reader :text
+
     # Creates a new text entry widget.
-    def initialize(text="", **options, &block)
+    def initialize(text='', **options, &block)
       super(Gtk::Entry.new, **options, &block)
-      @text = text
+      self.text = text
     end
 
     # Sets the text inside the widget.
@@ -18,11 +20,6 @@ module Interphase
       @text = value.clone.freeze
 
       gtk_instance.text = text
-    end
-
-    # Get the text inside the widget.
-    def text(value)
-      gtk_instance.text
     end
   end
 end

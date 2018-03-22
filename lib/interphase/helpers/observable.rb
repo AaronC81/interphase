@@ -14,7 +14,7 @@ module Interphase
       # +object+:: The object to wrap.
       def initialize(object, &block)
         # :: is required because we inherit BasicObject, not Object
-        ::Kernal.raise ::ArgumentError, 'Requires a block' if block.nil?
+        ::Kernel.raise ::ArgumentError, 'Requires a block' unless ::Kernel.block_given?
 
         @object = object
         @on_change = block

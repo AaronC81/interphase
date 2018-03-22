@@ -61,6 +61,13 @@ module Interphase
     def respond_to_missing?
       true
     end
+
+    # A list of the transformers applied to this object. Note that
+    # Widget#transformers will always return an empty +Array+, but each instance
+    # of +Transformer+ will append to this list.
+    def transformers
+      []
+    end
   end
 
   # A widget which may contain other widgets.
@@ -98,7 +105,7 @@ module Interphase
         # An exception simply means that wasn't the child we were looking for
         begin
           return child.send(requested)
-        rescue StandardError
+        rescue NoMethodError
           next
         end
       end
@@ -106,6 +113,7 @@ module Interphase
       super
     end
 
+    # TODO: Seems like a wonky implementation
     def respond_to_missing?(*)
       true
     end

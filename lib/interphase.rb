@@ -3,6 +3,9 @@
 require 'interphase/helpers/observable'
 require 'interphase/helpers/layout_parser'
 
+require 'interphase/transformers/transformer'
+require 'interphase/transformers/scrolling_transformer'
+
 require 'interphase/widgets/basic_widgets'
 require 'interphase/widgets/window'
 require 'interphase/widgets/label'

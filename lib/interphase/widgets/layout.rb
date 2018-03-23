@@ -33,7 +33,7 @@ module Interphase
 
       @set_slot_names << name
       slot_description = @description.widgets[name]
-      
+
       add(
         widget,
         slot_description.left,

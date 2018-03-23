@@ -23,4 +23,14 @@ RSpec.shared_examples 'a text container' do
   end
 end
 
+RSpec::Matchers.define :be_a_placement_of do |left, right, top, bottom|
+  match do |actual|
+    actual.is_a?(Interphase::Helpers::LayoutPlacement) \
+      && actual.left == left \
+      && actual.right == right \
+      && actual.top == top \
+      && actual.bottom == bottom
+  end
+end
+
 include Interphase

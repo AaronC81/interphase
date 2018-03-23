@@ -15,7 +15,15 @@ module Interphase
     # +right+:: The column number to attach the right side of the widget to.
     # +top+:: The row number to attach the top of the widget to.
     # +bottom+:: The row number to attach the bottom of the widget to.
-    LayoutPlacement = Struct.new('LayoutPlacement', :left, :right, :top, :bottom)
+    LayoutPlacement = Struct.new('LayoutPlacement', :left, :right, :top, :bottom) do
+      # Determines whether a point is contained within the +LayoutPlacement+'s
+      # bounds.
+      # +row+:: The line of the point.
+      # +col+:: The column of the point.
+      def contain_point?(row, col)
+        col >= left && col < right && row >= top && row < bottom
+      end
+    end
 
     # Provides methods to parse an LDS into a description of a +Grid+, for use
     # with +Layout+.
@@ -57,13 +65,24 @@ module Interphase
 
         input.each_with_index do |line, row|
           line.chars.each_with_index do |char, col|
-            widgets[char] = create_placement_from_start(row, col) \
-              if widgets[char].nil?
+            # Skip if this point has already been processed, as part of another
+            # placement
+            next if widgets[char]&.contain_point?(row, col)
+
+            # Check this widget's name doesn't clash with a previously declared
+            # one
+            widgets.each do |name, placement|
+              raise "Widget '#{name}' has already been declared" \
+                if name == char && !placement.contain_point?(row, col) 
+            end
+
+            widgets[char] = create_placement_from_start(row, col)
           end
         end
 
         LayoutDescription.new(rows, columns, widgets)
       end
+
 
       # Creates a +LayoutPlacement+ given a widget's starting position.
       # +start_row+:: The row on which the top-left of the widget occurs.

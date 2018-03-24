@@ -19,3 +19,6 @@ require 'interphase/widgets/button'
 require 'interphase/widgets/entry'
 require 'interphase/widgets/grid'
 require 'interphase/widgets/layout'
+
+require 'interphase/extras/status_icon'
+require 'interphase/extras/stock_icon'

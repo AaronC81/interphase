@@ -4,6 +4,7 @@ require 'gtk2'
 
 module Interphase
   # A basic GTK widget wrapper.
+  # TODO: Break `on` and `destroy` away from this into another class
   class Widget
     attr_accessor :gtk_instance, :parent, :name
 
@@ -30,6 +31,11 @@ module Interphase
     # Shows this widget.
     def show
       gtk_instance.show
+    end
+
+    # Hides this widget.
+    def hide
+      gtk_instance.hide
     end
 
     # Associates a block with a signal. The block is invoked whenever the

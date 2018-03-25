@@ -2,6 +2,8 @@
 
 require 'gtk2'
 
+require 'interphase/ui_object'
+
 require 'interphase/helpers/observable'
 require 'interphase/helpers/layout_parser'
 

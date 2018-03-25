@@ -4,16 +4,12 @@ require 'gtk2'
 
 module Interphase
   # A tray status icon.
-  class StatusIcon
+  class StatusIcon < UiObject
     attr_reader :gtk_instance
 
     def initialize(tooltip)
       @gtk_instance = Gtk::StatusIcon.new
       self.tooltip = tooltip
-    end
-
-    def on(event, &block)
-      @gtk_instance.signal_connect(event, &block)
     end
 
     def on_click(&block)

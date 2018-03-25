@@ -4,18 +4,16 @@ require 'gtk2'
 
 module Interphase
   # A basic GTK widget wrapper.
-  # TODO: Break `on` and `destroy` away from this into another class
-  class Widget
+  class Widget < UiObject
     attr_accessor :gtk_instance, :parent, :name
 
     # Creates a new widget.
     # +gtk_instance+:: The GTK widget instance this is wrapping.
     def initialize(gtk_instance, **options, &block)
-      @gtk_instance = gtk_instance
+      super(gtk_instance, **options, &block)
+
       @parent = nil
       @name = options[:name]
-
-      instance_eval(&block) if block_given?
     end
 
     # Requests that this widget is resized. Note that this is a method, rather
@@ -34,18 +32,6 @@ module Interphase
     # Hides this widget.
     def hide
       gtk_instance.hide
-    end
-
-    # Associates a block with a signal. The block is invoked whenever the
-    # signal occurs.
-    # +name+:: The name of the signal.
-    def on(name, &block)
-      gtk_instance.signal_connect(name, &block)
-    end
-
-    # Destroy this widget.
-    def destroy
-      gtk_instance.destroy
     end
 
     # Respond to lookups by name.

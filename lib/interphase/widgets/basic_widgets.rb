@@ -10,8 +10,6 @@ module Interphase
 
     # Creates a new widget.
     # +gtk_instance+:: The GTK widget instance this is wrapping.
-    # +name:+:: This widgets name, allowing it to be referred to after being
-    #           created.
     def initialize(gtk_instance, **options, &block)
       @gtk_instance = gtk_instance
       @parent = nil

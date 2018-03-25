@@ -4,8 +4,6 @@ require 'interphase'
 include Interphase
 
 window = Window.new('List View') do
-  quit_on_delete!
-
   add ListView.new(%w[Name Age]) do
     rows << %w[Aaron 17]
     rows << %w[Bob 18]

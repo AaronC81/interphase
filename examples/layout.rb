@@ -4,8 +4,6 @@ require 'interphase'
 include Interphase
 
 window = Window.new('Layout') do
-  quit_on_delete!
-
   add Layout.new('
     =====
     <###>

@@ -22,8 +22,10 @@ module Interphase
       end
     end
 
-    # Runs the entire Interphase application.
+    # Runs this window as an Interphase application. Note that this calls 
+    # #quit_on_delete! so the program will stop when this window is closed.
     def run
+      quit_on_delete!
       Gtk.main
     end
 

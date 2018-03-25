@@ -14,8 +14,6 @@ window = Window.new('Numbers') do
       end
     end
   end
-
-  quit_on_delete!
 end
 
 window.show_all

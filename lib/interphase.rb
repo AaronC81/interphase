@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'gtk2'
+
 require 'interphase/helpers/observable'
 require 'interphase/helpers/layout_parser'
 
@@ -22,3 +24,10 @@ require 'interphase/widgets/layout'
 
 require 'interphase/extras/status_icon'
 require 'interphase/extras/stock_icon'
+
+module Interphase
+  # Runs the entire Interphase application.
+  def run
+    Gtk.main
+  end
+end

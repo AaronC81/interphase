@@ -36,8 +36,6 @@ window = Window.new('Hello, world') do
       count += 1
     end
   end
-
-  quit_on_delete!
 end
 
 window.button.click

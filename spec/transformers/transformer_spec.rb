@@ -17,7 +17,6 @@ describe Interphase::Transformer do
   context 'inside containers' do
     it 'persists through name lookups' do
       window = Window.new('') do
-        # TODO Adapt for new constructor
         widget = Label.new('', name: 'x')
         t1 = Transformer.new(widget, widget.gtk_instance)
 

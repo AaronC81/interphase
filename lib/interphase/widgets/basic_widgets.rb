@@ -51,7 +51,6 @@ module Interphase
     end
 
     # Respond to lookups by name.
-    # TODO IMPLEMENT RESPONDS_TO
     def method_missing(requested, *args, &block)
       # If any arguments or a block have been given, then this isn't an attr
       if !args.empty? || block_given?
@@ -64,8 +63,8 @@ module Interphase
       super
     end
 
-    def respond_to_missing?
-      true
+    def respond_to_missing?(requested)
+      requested.to_s == name
     end
 
     # A list of the transformers applied to this object. Note that
@@ -105,7 +104,6 @@ module Interphase
     end
 
     # Allows child named widgets to be looked up like an attribute.
-    # TODO IMPLEMENT RESPONDS_TO
     def method_missing(requested, *args, &block)
       (children || []).each do |child|
         # An exception simply means that wasn't the child we were looking for
@@ -119,9 +117,8 @@ module Interphase
       super
     end
 
-    # TODO: Seems like a wonky implementation
-    def respond_to_missing?(*)
-      true
+    def respond_to_missing?(requested)
+      (children || []).map { |child| child.respond_to?(requested) }.any?
     end
   end
 end

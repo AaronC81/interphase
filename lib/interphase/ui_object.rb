@@ -25,5 +25,10 @@ module Interphase
     def destroy
       gtk_instance.destroy
     end
+
+    # Query whether the widget is destroyed.
+    def destroyed?
+      gtk_instance.destroyed?
+    end
   end
 end

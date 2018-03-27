@@ -17,8 +17,6 @@ include Interphase
 
 window = Window.new('Hello world window') do
   size 200, 200
-  quit_on_delete!
-
   add Label.new('Hello, world!')
 end
 

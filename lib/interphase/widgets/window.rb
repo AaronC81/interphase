@@ -31,7 +31,9 @@ module Interphase
 
     # Quits the entire Interphase application, killing all its threads.
     def quit
-      @threads&.each(&:kill)
+      @threads&.each do |t|
+        t.kill.join
+      end
       Gtk.main_quit
     end
 
@@ -40,19 +42,18 @@ module Interphase
     # probably solve that issue.
     # Having to use this is usually the sign of a badly-written program!
     def quit!
-      @threads&.each(&:kill)
-      Gtk.main_quit
+      quit
       exit!
     end
 
     # Binds a block to run as a +Thread+; it begins executing immediately.
     # Destroying the window kills all threads.
-    # TOOD DOES IT?
     def in_background(&block)
       @threads ||= []
       thread = Thread.new(&block)
       thread.abort_on_exception = true
       @threads << thread
+      thread
     end
   end
 end

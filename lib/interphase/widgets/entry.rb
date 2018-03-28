@@ -8,7 +8,7 @@ module Interphase
     attr_reader :text
 
     # Creates a new text entry widget.
-    def initialize(text='', **options, &block)
+    def initialize(text = '', **options, &block)
       super(Gtk::Entry.new, **options, &block)
       self.text = text
     end

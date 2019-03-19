@@ -3,8 +3,6 @@
 
 ![Logo](img/logo_small.png)
 
-### Have a feature request? Need some help? Want to get involved? [Join our Discord!](https://discord.gg/XjMjKzC)
-
 ## What is Interphase?
 Interphase is a **GUI library for Ruby.** It's got plenty of features & great
 cross-platform support, and it's **really easy to use**.
